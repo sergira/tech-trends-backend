@@ -35,7 +35,7 @@ MANAGERS = ADMINS
 SECRET_KEY = os.environ.get('SECRET_KEY','#b%ic0swf*u625x&++7%5r_q&gy(*y^8+%dpx!7wl4^z4a3t#r')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['polar-forest-63120.herokuapp.com']
 
