@@ -1,2 +1,4 @@
+tech_trends_backend/settings/local.py
+
 *.sqlite3
 *.pyc
