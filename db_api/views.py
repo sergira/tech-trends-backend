@@ -10,7 +10,6 @@ from db_api.serializers import NewsArticleSerializer, TagSerializer, CompanySeri
 from db_api.filters import NewsArticleFilterSet
 from url_filter.integrations.drf import DjangoFilterBackend
 
-
 class NewsArticleViewSet(viewsets.ModelViewSet):
     """
     list, create, retrieve, update and destroy
