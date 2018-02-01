@@ -1,4 +1,5 @@
 from django.db import models
+import datetime
 
 
 ARTICLE_CHOICES = (('spacedotcom','Space.com'),('spacenews', 'SpaceNews.com'),)
@@ -6,7 +7,7 @@ ARTICLE_CHOICES = (('spacedotcom','Space.com'),('spacenews', 'SpaceNews.com'),)
 
 class NewsArticle (models.Model):
 
-    tstamp = models.DateTimeField(auto_now_add=True)
+    tstamp = models.DateTimeField()
     url = models.CharField(max_length=300, blank=True, default='UNDEFINED')    
     title = models.CharField(max_length=300, blank=True, default='UNDEFINED')
     author = models.CharField(max_length=100, blank=True, default='UNDEFINED')

@@ -23,16 +23,6 @@ class NewsArticleViewSet(viewsets.ModelViewSet):
         return NewsArticle.objects \
             .prefetch_related('tag') \
             .select_related('company') 
-#            .select_related('beat') \
-#            .select_related('city') \
-#            .select_related('priority') \
-#            .select_related('call_source') \
-#            .select_related('nature') \
-#            .select_related('nature__nature_group') \
-#            .select_related('close_code') \
-#            .select_related('primary_unit') \
-#            .select_related('first_dispatched') \
-#.select_related('reporting_unit')
 
 class TagViewSet(viewsets.ModelViewSet):
     """
