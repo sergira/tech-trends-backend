@@ -146,7 +146,6 @@ NewsArticleFilterSet = create_filterset(
         {"name": "tstamp", "type":"daterange", "method":"true"},                
         {"name": "url", "lookups":["icontains"], "method":"true"},
         {"name": "title", "lookups":["icontains"], "method":"true"},
-        #{"name": "author", "type":"select", "method":"true"},
         {"name": "brief", "lookups":["icontains"], "method":"true"},
         {"name": "body", "lookups":["icontains"], "method":"true"},
         {"name": "source", "type":"select", "method":"true",
@@ -157,8 +156,8 @@ NewsArticleFilterSet = create_filterset(
                     ["spacenews", "SpaceNews.com"]
                 ]
             },
-#        {"name": "company", "rel": "Company", "lookups":["exact","in"]},
-#        {"name": "tag", "rel": "Tag", "lookups":["exact","in"]},
+        {"name": "company", "lookups":["exact","in"], "method":"true"},
+        {"name": "tag", "lookups":["exact","in"], "method":"true"},
     ]
 )
 

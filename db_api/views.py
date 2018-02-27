@@ -20,9 +20,9 @@ class NewsArticleViewSet(viewsets.ModelViewSet):
 #    filter_fields = ['id','title','company']
     filter_class = NewsArticleFilterSet
     def get_queryset(self):
-        return NewsArticle.objects \
-            .prefetch_related('tag') \
-            .select_related('company') 
+        return NewsArticle.objects #\
+#            .prefetch_related('tag') \
+#            .select_related('company') 
 
 class TagViewSet(viewsets.ModelViewSet):
     """
