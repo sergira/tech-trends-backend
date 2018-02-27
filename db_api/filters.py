@@ -120,7 +120,7 @@ class NewsArticleFilterSet(ModelFilterSet):
 
     class Meta:
         model = models.NewsArticle
-        fields = ["tstamp", "url", "title", "author", "brief", "body", "source",
+        fields = ["tstamp", "url", "title", "brief", "body", "source", "date",
             "company", "tag",]
 
 class TagFilterSet(ModelFilterSet):
@@ -146,7 +146,7 @@ NewsArticleFilterSet = create_filterset(
         {"name": "tstamp", "type":"daterange", "method":"true"},                
         {"name": "url", "lookups":["icontains"], "method":"true"},
         {"name": "title", "lookups":["icontains"], "method":"true"},
-        {"name": "author", "type":"select", "method":"true"},
+        #{"name": "author", "type":"select", "method":"true"},
         {"name": "brief", "lookups":["icontains"], "method":"true"},
         {"name": "body", "lookups":["icontains"], "method":"true"},
         {"name": "source", "type":"select", "method":"true",
@@ -157,8 +157,8 @@ NewsArticleFilterSet = create_filterset(
                     ["spacenews", "SpaceNews.com"]
                 ]
             },
-        {"name": "company", "rel": "Company", "lookups":["exact","in"]},
-        {"name": "tag", "rel": "Tag", "lookups":["exact","in"]},
+#        {"name": "company", "rel": "Company", "lookups":["exact","in"]},
+#        {"name": "tag", "rel": "Tag", "lookups":["exact","in"]},
     ]
 )
 
