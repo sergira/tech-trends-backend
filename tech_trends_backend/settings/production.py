@@ -95,13 +95,20 @@ WSGI_APPLICATION = 'tech_trends_backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#        'ENGINE': 'django.db.backends.sqlite3',    # Uncomment for SQLite
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Uncomment for PostGreSQL
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'Supaero-PIE',
+        'HOST': '104.155.62.46',
+        'PORT': '5432',
     }
 }
-import dj_database_url
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+
+#import dj_database_url
+#db_from_env = dj_database_url.config()
+#DATABASES['default'].update(db_from_env)
 #DATABASES['default']['CONN_MAX_AGE'] = 500
 
 
