@@ -5,8 +5,8 @@ from db_api.models import NewsArticle, Tag, Company
 class NewsArticleSerializer(serializers.ModelSerializer):
     class Meta:
         model = NewsArticle
-        fields = ('tstamp', 'url', 'title', 'author', 'brief',
-                'body', 'source', 'tag', 'company',)
+        fields = ('tstamp', 'url', 'title', 'brief', 'body', 
+            'date', 'source', 'company', 'tag',)
 
 class TagSerializer(serializers.ModelSerializer):
     class Meta:

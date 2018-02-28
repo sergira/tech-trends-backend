@@ -10,7 +10,6 @@ from db_api.serializers import NewsArticleSerializer, TagSerializer, CompanySeri
 from db_api.filters import NewsArticleFilterSet
 from url_filter.integrations.drf import DjangoFilterBackend
 
-
 class NewsArticleViewSet(viewsets.ModelViewSet):
     """
     list, create, retrieve, update and destroy
@@ -21,19 +20,9 @@ class NewsArticleViewSet(viewsets.ModelViewSet):
 #    filter_fields = ['id','title','company']
     filter_class = NewsArticleFilterSet
     def get_queryset(self):
-        return NewsArticle.objects \
-            .prefetch_related('tag') \
-            .select_related('company') 
-#            .select_related('beat') \
-#            .select_related('city') \
-#            .select_related('priority') \
-#            .select_related('call_source') \
-#            .select_related('nature') \
-#            .select_related('nature__nature_group') \
-#            .select_related('close_code') \
-#            .select_related('primary_unit') \
-#            .select_related('first_dispatched') \
-#.select_related('reporting_unit')
+        return NewsArticle.objects #\
+#            .prefetch_related('tag') \
+#            .select_related('company') 
 
 class TagViewSet(viewsets.ModelViewSet):
     """

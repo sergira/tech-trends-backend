@@ -1,1 +1,2 @@
-web: python3 manage.py runserver
+web: gunicorn tech_trends_backend.wsgi
+
