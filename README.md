@@ -73,12 +73,12 @@ Set Nginx up by replacing **manually** the `Ngix` conf file at `/etc/nginx/sites
 ```text
 server { 
     listen 80; 
-    server_name pie71_vm; 
+    server_name pie71_be; 
 
     location / { 
         proxy_set_header   X-Forwarded-For $remote_addr;
         proxy_set_header   Host $http_host;
-        proxy_pass         http://127.0.0.1:4200;
+        proxy_pass         http://127.0.0.1:8000;
     }
 }
 ```
